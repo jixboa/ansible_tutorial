@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Check /etc/hosts file
+    ansible.builtin.shell: cat /etc/hosts
+    register: hosts_file_contents
+
+
+  - name: Display hosts file
+    ansible.builtin.debug:
+      var: hosts_file_contents.stdout_lines
+

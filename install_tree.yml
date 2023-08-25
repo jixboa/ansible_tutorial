@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install tree on all servers
+    yum:
+      name: tree
+      state: present
+
